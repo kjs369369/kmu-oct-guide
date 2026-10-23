@@ -16,7 +16,7 @@
 | 4 | 평문 전송 (CWE-319) | 높음 | 통과 | 모든 외부 링크 https, 페이지 전송은 Enforce HTTPS로 강제(16번) |
 | 5 | Open Redirect (CWE-601) | 높음 | 통과 | 리다이렉트 로직 없음 |
 | 6 | CSRF (CWE-352) | 높음 | 통과 | 폼·상태 변경 요청 없음, CSP `form-action 'none'` |
-| 7 | 보안 헤더 — CSP | 높음 | 통과 | meta CSP: `script-src 'self'`, 인라인 스크립트·핸들러·style 속성 0개 |
+| 7 | 보안 헤더 — CSP | 높음 | 통과 | meta CSP: `script-src 'self'`, 실행 스크립트는 외부 파일만. 인라인은 실행되지 않는 데이터 블록(JSON-LD) 1개뿐, 핸들러·style 속성 0개 |
 | 8 | 외부 링크 탭내빙(reverse tabnabbing) | 중간 | 통과 | `target="_blank"` 8개 모두 `rel="noopener noreferrer"` |
 | 9 | 디버그 코드 (CWE-489) | 중간 | 통과 | console.log·debugger 없음 |
 | 10 | 주석 내 민감정보 (CWE-615) | 중간 | 통과 | 주석은 구조 설명만 |
@@ -31,3 +31,9 @@
 
 - 미들웨어/라우트 RBAC(역할 기반 접근 제어): 로그인·관리자 기능이 없는 공개 안내 페이지라 적용 대상 없음
 - SQLi·SSRF·파일 업로드·인증·세션 항목: 서버 코드 없음
+
+## 2026-10-23 추가 점검 (검색 노출용 태그 추가)
+
+- 추가 파일: `robots.txt`(전체 허용), `sitemap.xml`, `llms.txt` — 공개 정보만 포함, 개인정보·비공개 경로 없음
+- JSON-LD(Course 스키마): 실행 코드가 아닌 데이터 블록, 공개 일정·장소·강사 정보만 포함
+- 결과: 기존 판정(조건부 승인) 유지

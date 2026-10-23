@@ -13,6 +13,8 @@
 | `assets/img/` | 지도 2장, OG 이미지(1200×630), 파비콘 | 이미지 교체 |
 | `CNAME` | 커스텀 도메인 `kmu.aiclab2020.com` | 도메인 변경 시 |
 | `.nojekyll` | GitHub Pages의 Jekyll 처리 끄기 | — |
+| `robots.txt` · `sitemap.xml` | 검색엔진 수집 허용·사이트맵 | 페이지 추가 시 sitemap에 주소 추가 |
+| `llms.txt` | AI 검색(GEO)용 요약 | 핵심 정보 변경 시 함께 수정 |
 
 외부 의존성: Google Fonts(Inter, Noto Sans KR) 스타일시트 1개. npm 패키지 없음 → 의존성 충돌 없음.
 
@@ -22,6 +24,10 @@
 - 강조색(레드): `style.css` → `--red`, 히어로 빛 색은 `data-accent`
 - 동선 화살표 좌표: `index.html`의 `<svg viewBox="0 0 1400 812">` 안 `d="M..."` 값 (지도 이미지 1400×812 기준)
 - OG 이미지: `assets/img/og.png` 교체 후 카카오톡 공유 캐시는 https://developers.kakao.com/tool/debugger/sharing 에서 초기화
+
+## 검색 키워드
+
+- 검색 태그(GPT-6 Astra, 아스트라 등): `index.html`의 `<title>`, `meta description`, `meta keywords`, JSON-LD `keywords`, 히어로의 `<ul class="tags">`, FAQ 첫 항목
 
 ## 배포
 

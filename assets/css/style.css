@@ -95,6 +95,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .dot-hero .eyebrow i { width: 6px; height: 6px; border-radius: 9999px; background: var(--red); box-shadow: 0 0 10px var(--red); flex: none; }
 .dot-hero .bottom { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 16px max(14vh, 96px); text-align: center; }
 .dot-hero .desc { margin: 0; max-width: 620px; font-size: clamp(16px, 2.6vw, 19px); line-height: 1.5; color: var(--ink); font-weight: 600; }
+.dot-hero .tags { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.dot-hero .tags li { font-size: 12px; font-weight: 700; color: var(--ink); background: var(--chip); border-radius: 9999px; padding: 4px 10px; }
+.dot-hero .tags li:first-child { background: var(--red); color: #FFFFFF; }
 .dot-hero .meta { margin: 6px 0 0; font-size: 14px; color: var(--mute); }
 .dot-hero .actions { pointer-events: auto; margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .fade { transition: opacity 1s cubic-bezier(.2,.9,.25,1), transform 1s cubic-bezier(.2,.9,.25,1); opacity: 0; transform: translateY(10px); }
