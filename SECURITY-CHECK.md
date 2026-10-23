@@ -13,7 +13,7 @@
 | 1 | XSS (CWE-79) | 긴급 | 통과 | innerHTML·document.write·eval 미사용, 사용자 입력 없음 |
 | 2 | 코드 주입 (CWE-94/95) | 긴급 | 통과 | eval·new Function·문자열 setTimeout 없음 |
 | 3 | 하드코딩 자격증명 (CWE-259/321) | 긴급 | 통과 | 키·토큰·비밀번호 문자열 없음 |
-| 4 | 평문 전송 (CWE-319) | 높음 | 통과 | 모든 링크 https, CSP `upgrade-insecure-requests` |
+| 4 | 평문 전송 (CWE-319) | 높음 | 통과 | 모든 외부 링크 https, 페이지 전송은 Enforce HTTPS로 강제(16번) |
 | 5 | Open Redirect (CWE-601) | 높음 | 통과 | 리다이렉트 로직 없음 |
 | 6 | CSRF (CWE-352) | 높음 | 통과 | 폼·상태 변경 요청 없음, CSP `form-action 'none'` |
 | 7 | 보안 헤더 — CSP | 높음 | 통과 | meta CSP: `script-src 'self'`, 인라인 스크립트·핸들러·style 속성 0개 |
